@@ -42,7 +42,7 @@ namespace FlottakezeloCLA.Models
             }
             else
             {
-                BatteryLevel += int.Parse(percentage.ToString());
+                BatteryLevel += (int)percentage;
             }
 
         }
