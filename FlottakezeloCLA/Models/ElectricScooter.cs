@@ -59,13 +59,14 @@ namespace FlottakezeloCLA.Models
         }
         public void Charge(double percentage)
         {
-            if (percentage != 0)
-            {
-                batteryLevel += (int)percentage;
-            }
-            else
+            if (batteryLevel ==0)
             {
                 batteryLevel = 1;
+            }
+           
+            else
+            {
+                batteryLevel += (int)percentage;
             }
         }
 
