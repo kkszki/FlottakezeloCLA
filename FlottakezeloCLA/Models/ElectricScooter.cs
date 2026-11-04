@@ -40,7 +40,7 @@ namespace FlottakezeloCLA.Models
             else
 
             {
-                Console.WriteLine("Motor elindult");
+                Console.WriteLine("Motor elindult.");
                 IsRunning = true;
             }
         }
