@@ -22,7 +22,7 @@ namespace FlottakezeloCLA.Models
         public ElectricScooter()
         {
             this.isRunning = false;
-            this.batteryLevel = 0;
+            this.batteryLevel = 1;
             this.brand ="";
         }
 
