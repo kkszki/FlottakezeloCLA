@@ -19,26 +19,28 @@ namespace FlottakezeloCLA
             jarmuvek.Add(new ElectricCar(70, "Toyota", "Prius", 20.3, false));
             jarmuvek.Add(new ElectricScooter(true, 20, "Xiaomi"));
 
+            List<string> electricVehicles = new List<string>();
+
             foreach (IVehicle vehicle in jarmuvek)
             {
                 vehicle.StartEngine();
+
                 if (vehicle is IElectric electric)
                 {
                     electric.Charge(100);
-                    IElectric electricVehicle = vehicle as IElectric;
-
 
                     if (vehicle is ElectricCar v)
                     {
-                        File.WriteAllText("electric.txt", v.Brand);
+                        electricVehicles.Add(v.Brand);
                     }
                     else if (vehicle is ElectricScooter scooter)
                     {
-                        File.WriteAllText("electric.txt", scooter.Brand);
-
+                        electricVehicles.Add(scooter.Brand);
                     }
                 }
             }
+
+            File.WriteAllLines("electric.txt", electricVehicles);
         }
     }
 }
